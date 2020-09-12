@@ -7,11 +7,13 @@
 
 .login > div > img {
     object-fit: contain;
-    height: 150px;
+    height: 100px;
+    margin-bottom: 10px;
 }
 
 .login > div > h1 {
     color: rgb(116, 19, 99);
+    font-size: 25px;
 }
 
 .login > div {
@@ -21,7 +23,7 @@
 }
 
 .login > button {
-    width: 250px;
+    width: 180px;
     background-color: rgb(116, 19, 99);
     color: #eff2f5;
     text-transform: uppercase;
