@@ -6,6 +6,8 @@ import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InsertEmotionIcon from '@material-ui/icons/InsertEmoticon';
 import { Avatar } from '@material-ui/core';
 import { useStateValue } from '../../StateProvider';
+import db from '../../firebase';
+import firebase from 'firebase';
 
 function MessengerSender() {
     const [input, setInput] = useState('');
@@ -15,7 +17,13 @@ function MessengerSender() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        //some clever db stuff
+        db.collection('posts').add({
+            message: input,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            profilePic: user.photoURL,
+            username: user.displayName,
+            image: imageUrl,
+        });
 
         setInput("");
         setImageUrl("");

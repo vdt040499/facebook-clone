@@ -1,5 +1,3 @@
-import { ContactSupportOutlined } from "@material-ui/icons";
-
 export const initialState = {
     user: null,
 };
